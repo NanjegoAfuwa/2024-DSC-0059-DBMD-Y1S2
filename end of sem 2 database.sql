@@ -1,32 +1,33 @@
 -- CREATE DATABASE end_data;
--- CREATE TABLE Finance(
---    StudentID int,
---    Tuition_Fee int,
---    Administartion_Fee int,
---    Exams_Fee int,
---    Medical_Fee int
---    ); 
+CREATE TABLE Finance(
+   StudentID int,
+   Tuition_Fee int,
+   Administartion_Fee int,
+   Exams_Fee int,
+   Medical_Fee int
+); 
 
 
 -- adding the data given into the table--
--- INSERT INTO Finance (StudentID, Tuition_Fee, Administartion_Fee,Exams_Fee,Medical_Fee)
--- VALUES 
--- ('235','30000', '5000', '3000','4000'),
--- ('26','40000', '5000', '2000','4000'),
--- ('1','3400', '5000', '3000','4000'),
--- ('2','23000', '5000', '3000','4000'),
--- ('3','20000', '5000', '3000','4000'),
--- ('29','35000', '5000', '2000','4000'),
--- ('127','2800', '5000', '3000','4000');
+INSERT INTO Finance (StudentID, Tuition_Fee, Administartion_Fee,Exams_Fee,Medical_Fee)
+VALUES 
+('235','30000', '5000', '3000','4000'),
+('26','40000', '5000', '2000','4000'),
+('1','3400', '5000', '3000','4000'),
+('2','23000', '5000', '3000','4000'),
+('3','20000', '5000', '3000','4000'),
+('29','35000', '5000', '2000','4000'),
+('127','2800', '5000', '3000','4000');
 
 -- creatinng table student so that i be able to extract
--- CREATE TABLE Student(
---    StudentName VARCHAR(255),
---    StudentID int,
---    Birthdate DATE,
---    Year DATE,
---    MobileNo int
---    );
+CREATE TABLE Student(
+  StudentName VARCHAR(255),
+  StudentID int,
+  Birthdate DATE,
+  Year DATE,
+  MobileNo int
+);
+
  INSERT INTO Student(StudentName, StudentID, Birthdate, Year, MobileNo )
  VALUES 
  ( "Jane", 235, "12/1/1987", "Y1S2", 0722453627),
@@ -55,5 +56,12 @@ VALUES
 UPDATE Student SET StudentName= "Nelson"  WHERE StudentName = "Nicholas";
 
 -- vi
+-- total tuition
  SELECT COUNT(*)
   FROM Tuition_fee;
+  
+ --  highest and lowest
+ SELECT 
+  MAX(tuition_fees) AS highest_fee,
+  MIN(tuition_fees) AS lowest_fee
+FROM tuition_fees;
